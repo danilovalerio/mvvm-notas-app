@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_bar_adicionar"
+        android:title="Adicionar"
+        android:icon="@drawable/ic_adicionar_item"
+        app:showAsAction="ifRoom">
+    </item>
+
+</menu>
