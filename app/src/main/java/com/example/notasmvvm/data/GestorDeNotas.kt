@@ -1,6 +1,6 @@
 package com.example.notasmvvm.data
 
-//Pega as notas do banco, do firebase etc... 
+//Pega as notas do banco, do firebase etc...
 class GestorDeNotas {
 
     private val data = criaNotas()
