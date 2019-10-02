@@ -8,6 +8,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    //essa variável só será criada quando for chamada
+    val notasAdapter: NotasAdapter by lazy {
+        NotasAdapter()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

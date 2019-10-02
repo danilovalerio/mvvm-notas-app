@@ -26,4 +26,14 @@ class NotasAdapter(val data: MutableList<Nota> = mutableListOf()):
     override fun onBindViewHolder(holder: NotasViewHolder, position: Int) =
         holder.bindView(data[position])
 
+    fun add(item: Nota){
+        data.add(item)
+        notifyDataSetChanged()
+    }
+
+    fun remove(item: Nota){
+        data.remove(item)
+        notifyDataSetChanged()
+    }
+
 }
