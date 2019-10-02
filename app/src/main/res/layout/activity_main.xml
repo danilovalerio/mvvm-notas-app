@@ -9,6 +9,7 @@
 
     <!--  Toolbar pers.  -->
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar-pers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
