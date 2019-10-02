@@ -1,9 +1,11 @@
-package com.example.notasmvvm
+package com.example.notasmvvm.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.notasmvvm.R
+import com.example.notasmvvm.data.Nota
 import kotlinx.android.synthetic.main.item_nota.view.*
 
 class NotasViewHolder(val view: View) : RecyclerView.ViewHolder(view){

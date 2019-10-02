@@ -1,4 +1,4 @@
-package com.example.notasmvvm
+package com.example.notasmvvm.data
 
 data class Nota(val id: Int,
                  val texto: String)
