@@ -17,5 +17,14 @@
         app:title="@string/app_name"
         app:titleTextColor="#fff" />
 
+    <!--  Recycler View  -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar-pers" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
