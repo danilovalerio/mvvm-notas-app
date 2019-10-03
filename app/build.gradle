@@ -53,6 +53,9 @@ dependencies {
     // Koin for Dependency Injection
     //    implementation 'org.koin:koin-android-viewmodel:1.0.2'
 
+    // Koin Android ViewModel feature for Dependency Injection
+    implementation "org.koin:koin-android-viewmodel:2.0.1"
+
     //Testes
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

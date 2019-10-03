@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar_pers)
 
         recycler_view.adapter = notasAdapter
-        //recycler_view.layoutManager = LinearLayoutManager(this)
 
         //inicializa o ViewModel
         notasViewModel = ViewModelProviders.of(this).get(NotasViewModel::class.java)
@@ -46,7 +45,6 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     Log.d("NOTA",it.toString())
                     notasAdapter.add(it)
-                    //Toast.makeText(this,"Lista carregada", Toast.LENGTH_SHORT).show()
                 }
             }
         })

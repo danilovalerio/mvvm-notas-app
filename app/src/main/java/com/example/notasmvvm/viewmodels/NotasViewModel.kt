@@ -1,6 +1,5 @@
 package com.example.notasmvvm.viewmodels
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.notasmvvm.data.Database
@@ -22,8 +21,6 @@ class NotasViewModel: ViewModel() {
         //Se for nula, inicia ela com a lista que está na camada de modelo "GestorDeNotas"
         if (mNotas == null){
             mNotas = gestorNotas.getNotas()
-//            val tmp = gestorNotas.getNotas()
-//            mNotas!!.postValue(tmp)
         }
         return mNotas!!
     }
