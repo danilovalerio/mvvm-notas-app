@@ -18,5 +18,5 @@ class Database {
     }
 
     //Retorna somente o valor da lista de dados
-    fun obterNotas() = mDatabase.value
+    fun obterNotas() = mDatabase
 }
