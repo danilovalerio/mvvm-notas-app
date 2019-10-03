@@ -1,5 +1,6 @@
 package com.example.notasmvvm.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.notasmvvm.data.GestorDeNotas
@@ -12,13 +13,15 @@ import com.example.notasmvvm.data.Nota
 class NotasViewModel: ViewModel() {
     //consumir os dados da model / data
     private val gestorNotas = GestorDeNotas()
-    private val mNotas = MutableLiveData<List<Nota>>()
+    private var mNotas: MutableLiveData<List<Nota>>? = null
 
     //retorna as notas
-    fun getNotas():MutableLiveData<List<Nota>> = mNotas
-
-    fun carregarNotas(){
-        val tmp = gestorNotas.getNotas()
-        mNotas.postValue(tmp)
+    fun getNotas():MutableLiveData<List<Nota>> {
+        if (mNotas == null){
+            mNotas = MutableLiveData()
+            val tmp = gestorNotas.getNotas()
+            mNotas!!.postValue(tmp)
+        }
+        return mNotas!!
     }
 }
