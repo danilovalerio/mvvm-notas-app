@@ -2,7 +2,6 @@ package com.example.notasmvvm.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.notasmvvm.data.Database
 import com.example.notasmvvm.data.GestorDeNotas
 import com.example.notasmvvm.data.Nota
 
@@ -10,10 +9,8 @@ import com.example.notasmvvm.data.Nota
  * Essa classe será a gestora das notas, e pode ser utilizada por qualquer view
  */
 
-class NotasViewModel: ViewModel() {
-    //consumir os dados da model / data
-    private val database = Database()
-    private val gestorNotas = GestorDeNotas(database)
+class NotasViewModel(val gestorNotas: GestorDeNotas): ViewModel() {
+
     private var mNotas: MutableLiveData<MutableList<Nota>>? = null
 
     //retorna as notas

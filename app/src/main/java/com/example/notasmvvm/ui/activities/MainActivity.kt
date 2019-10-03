@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         recycler_view.adapter = notasAdapter
 
         //inicializa o ViewModel
-        notasViewModel = ViewModelProviders.of(this).get(NotasViewModel::class.java)
+        //notasViewModel = ViewModelProviders.of(this).get(NotasViewModel::class.java)
 
         notasViewModel.getNotas().observe(this, Observer {data ->
             //verificar se a lista é nula

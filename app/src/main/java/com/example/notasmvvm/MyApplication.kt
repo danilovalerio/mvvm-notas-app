@@ -9,6 +9,8 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        startKoin(this, listOf(ModulosDeDependencias.moduloDaApp))
+        startKoin(this,
+            listOf(ModulosDeDependencias.moduloDaApp)
+        )
     }
 }
