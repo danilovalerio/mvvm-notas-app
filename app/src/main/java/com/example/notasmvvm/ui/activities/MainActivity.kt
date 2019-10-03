@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar_pers)
 
         recycler_view.adapter = notasAdapter
-//        recycler_view.layoutManager = LinearLayoutManager(this)
+        //recycler_view.layoutManager = LinearLayoutManager(this)
 
         //inicializa o ViewModel
         notasViewModel = ViewModelProviders.of(this).get(NotasViewModel::class.java)
@@ -46,9 +46,8 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     Log.d("NOTA",it.toString())
                     notasAdapter.add(it)
-                    Toast.makeText(this,"Lista carregada", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this,"Lista carregada", Toast.LENGTH_SHORT).show()
                 }
-
             }
         })
     }
@@ -79,12 +78,8 @@ class MainActivity : AppCompatActivity() {
         dialog.setPositiveButton("Salvar"){d, i ->
             //Salvar a nota
             val nota = Nota(0, textoNota.text.toString())
-            Log.d("NOTA_SALVA", nota.id.toString()+" "+nota.text)
-
             notasViewModel.salvar(nota)
-            
         }
-
         dialog.create().show()
 
     }

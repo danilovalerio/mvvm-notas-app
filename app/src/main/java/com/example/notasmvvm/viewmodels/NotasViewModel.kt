@@ -13,14 +13,15 @@ import com.example.notasmvvm.data.Nota
 class NotasViewModel: ViewModel() {
     //consumir os dados da model / data
     private val gestorNotas = GestorDeNotas()
-    private var mNotas: MutableLiveData<List<Nota>>? = null
+    private var mNotas: MutableLiveData<MutableList<Nota>>? = null
 
     //retorna as notas
-    fun getNotas():MutableLiveData<List<Nota>> {
+    fun getNotas():MutableLiveData<MutableList<Nota>> {
+        //Se for nula, inicia ela com a lista que está na camada de modelo "GestorDeNotas"
         if (mNotas == null){
-            mNotas = MutableLiveData()
-            val tmp = gestorNotas.getNotas()
-            mNotas!!.postValue(tmp)
+            mNotas = gestorNotas.getNotas()
+//            val tmp = gestorNotas.getNotas()
+//            mNotas!!.postValue(tmp)
         }
         return mNotas!!
     }
