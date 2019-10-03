@@ -1,7 +1,6 @@
 package com.example.notasmvvm.ui.activities
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
@@ -9,17 +8,18 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.example.notasmvvm.R
 import com.example.notasmvvm.data.Nota
 import com.example.notasmvvm.ui.adapters.NotasAdapter
 import com.example.notasmvvm.viewmodels.NotasViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialogo_ui.view.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var notasViewModel: NotasViewModel
+    //inicializa a viewModel pelo DSL by
+    private val notasViewModel: NotasViewModel by viewModel()
 
     //essa variável só será inicializada quando for chamada
     private val notasAdapter: NotasAdapter by lazy {
