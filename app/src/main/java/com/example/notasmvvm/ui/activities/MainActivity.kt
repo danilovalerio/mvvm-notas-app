@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity() {
                 if(it.isEmpty()){
                     Toast.makeText(this,"Lista vazia", Toast.LENGTH_LONG).show()
                 } else {
-                    Log.d("NOTA",it.toString())
                     notasAdapter.add(it)
                 }
             }

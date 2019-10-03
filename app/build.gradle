@@ -51,10 +51,10 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
 
     // Koin for Dependency Injection
-    //    implementation 'org.koin:koin-android-viewmodel:1.0.2'
+    implementation 'org.koin:koin-android-viewmodel:1.0.2'
 
     // Koin Android ViewModel feature for Dependency Injection
-    implementation "org.koin:koin-android-viewmodel:2.0.1"
+//    implementation "org.koin:koin-android-viewmodel:2.0.1"
 
     //Testes
     testImplementation 'junit:junit:4.12'
