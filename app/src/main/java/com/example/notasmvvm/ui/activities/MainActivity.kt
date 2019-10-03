@@ -2,16 +2,20 @@ package com.example.notasmvvm.ui.activities
 
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.notasmvvm.R
+import com.example.notasmvvm.data.Nota
 import com.example.notasmvvm.ui.adapters.NotasAdapter
 import com.example.notasmvvm.viewmodels.NotasViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.dialogo_ui.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,12 +46,13 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     Log.d("NOTA",it.toString())
                     notasAdapter.add(it)
-                    Toast.makeText(this,"Lista carregada"+notasAdapter, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,"Lista carregada", Toast.LENGTH_SHORT).show()
                 }
 
             }
         })
     }
+
     //adição do menu principal
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_principal, menu)
@@ -56,8 +61,31 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if(item!!.itemId == R.id.action_bar_adicionar){
-            TODO("Chamar tela para adicionar nota")
+            dialogoAddNota()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun dialogoAddNota(){
+        //transforma o dialogo_ui em view
+        val layout = LayoutInflater.from(this)
+            .inflate(R.layout.dialogo_ui,null, false)
+
+        val textoNota = layout.input_nota
+
+        val dialog = AlertDialog.Builder(this)
+        dialog.setView(layout)
+        dialog.setNegativeButton("Cancelar", null)
+        dialog.setPositiveButton("Salvar"){d, i ->
+            //Salvar a nota
+            val nota = Nota(0, textoNota.text.toString())
+            Log.d("NOTA_SALVA", nota.id.toString()+" "+nota.text)
+
+            notasViewModel.salvar(nota)
+            
+        }
+
+        dialog.create().show()
+
     }
 }

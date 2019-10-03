@@ -26,7 +26,6 @@ class NotasAdapter(val data: MutableList<Nota> = mutableListOf()):
     }
 
     override fun getItemCount(): Int {
-        Log.d("TAMANHO",data.size.toString())
         return data.size
     }
 

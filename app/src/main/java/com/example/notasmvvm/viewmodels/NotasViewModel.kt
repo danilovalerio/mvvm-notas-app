@@ -24,4 +24,9 @@ class NotasViewModel: ViewModel() {
         }
         return mNotas!!
     }
+
+    //salvar as notas
+    fun salvar(mNota: Nota){
+        gestorNotas.addNota(mNota)
+    }
 }

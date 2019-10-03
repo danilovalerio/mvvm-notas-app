@@ -3,7 +3,7 @@ package com.example.notasmvvm.data
 //Pega as notas do banco, do firebase etc...
 class GestorDeNotas {
 
-    private val data = listOf<Nota>(
+    private val data = mutableListOf<Nota>(
         Nota(1,"Nota 1"),
         Nota(2,"Nota 2"),
         Nota(3,"Nota 3"),
@@ -18,5 +18,6 @@ class GestorDeNotas {
 
     fun getNotas() = data
 
+    fun addNota(nota: Nota)= data.add(nota)
 
 }
